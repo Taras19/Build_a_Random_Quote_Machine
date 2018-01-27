@@ -147,7 +147,7 @@ cite{
 }
 .next:hover:after {
   opacity: 0;
-  background: #4AB9F2;
+  //background: #4AB9F2;
 }
 .next:hover {
   color: #fff;
