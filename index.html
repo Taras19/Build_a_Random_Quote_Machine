@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ua">
+  <head>
+    <title>Цитати відомих українців</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Merienda:700" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    
+            
+  </head>
+  <body >
+   
+    <div class="parent-container">
+      <div class="title-container">
+        <h1 class="title">Цитати відомих українців.</h1>
+        <p class="title-content">Це деякі з моїх улюблених цитат. Для зручності перегляду є можливість вибору автора. Цитати генеруються у випадковому порядку. Приємного перегляду.</p>
+      </div>
+      <div class="content-container">
+        <img src="img/shevchenko.jpg" class="photo-author" alt="Тарас Шевченко" >
+        <div class="quote-container">
+          <blockquote>Погано дуже, страх погано! В оцій пустині пропадать. А ще поганше на Украйні Дивитись, плакать – і мовчать.</blockquote>
+          <cite>Тарас Шевченко</cite>
+          <div class="infoPosition-container">
+            <output class="currentPosition" title="Кількість переглянутих цитат"></output>
+            <span>-</span>
+            <output class="lengthCurrentList" title="Загальна кількість цитат"></output>
+          </div>
+        </div>
+      </div>
+      
+      <div class="container">
+        <!--посилання на соціальні мережі -->
+        <div class="social-container">
+          <a href="https://www.facebook.com/" class="facebook-link social-link" target="-blank" title="facebook"></a>
+          <a href="https://www.instagram.com/" class="instagram-link social-link" target="-blank" title="instagram"></a>
+          <a href="https://twitter.com/" class="twitter-link social-link" target="-blank" title="twitter"></a>
+        </div>
+        <!-- контейнер для елементів управління -->
+        <div class="controls-container">
+          <select name="choiceAuthor"  title="Вибір автора" disabled>
+            <option value="Всі автори">Всі автори</option>
+          </select>
+          <button type="button" class="next" disabled> Наступна </button>
+        </div>
+      </div>
+    </div>
+    <div class="error">
+      <div class="error-content">
+        <p>Вибачте сталась прикра помилка !</p> 
+        <p>Цитати не завантажились.</p>
+        <button class="continueBrowsing">Продовження перегляду</button>
+      </div>
+    </div>
+    <script src="js/myjs.js"></script> 
+    <script src="js/jquery.js"></script> 
+    <script src="js/jquery.nice-select.min.js"></script>
+ 
+  </body>
+</html>
