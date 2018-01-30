@@ -155,6 +155,9 @@ cite{
 button.next:active {
   background-color:transparent;
 }
+button.next:focus {
+  background-color:transparent;
+}
 .next:hover:before {
   width: 100%;
   background: #4AB9F2;
