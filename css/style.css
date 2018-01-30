@@ -377,9 +377,11 @@ cite{
   .content-container{
     flex-wrap:wrap;
     margin:0;
+    padding:0 15px;
   }
   .quote-container{
-    margin:0 15px;
+    //margin:0 15px;
+    width:100%;
   }
   .container{
     flex-wrap:wrap;
