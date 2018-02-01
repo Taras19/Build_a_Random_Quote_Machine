@@ -9,7 +9,7 @@ body{
     url("../img/pattern.jpg") right repeat-y,
     url("../img/symphony.png") round;
   background-size:auto calc(15px + 1vmin),auto calc(15px + 1vmin),auto auto;
-  //font-family: 'Merienda', cursive;
+  font-family: 'Merienda', cursive;
   box-sizing:border-box;
 }
 .parent-container{
@@ -48,7 +48,7 @@ body{
   border-radius:40px;
   background-color:white;
   box-shadow:inset 0 0 30px 5px rgba(74, 185, 242, 0.3);
-  //font-family: 'Covered By Your Grace', cursive;
+  font-family: 'Covered By Your Grace', cursive;
   text-align:center;
 }
 .container{
