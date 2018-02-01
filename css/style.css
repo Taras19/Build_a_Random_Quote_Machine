@@ -168,9 +168,9 @@ button.next:focus {
   height:40px;
   border:1px solid rgba(233, 30, 99, 0.49);
   border-radius:50%;
-  background-repeat:no-repeat;
-  background-position:center;
-  background-size:contain;
+  //background-repeat:no-repeat;
+  //background-position:center;
+  //background-size:contain;
   transition:all 1s;
 }
 .social-link:hover{
@@ -179,13 +179,13 @@ button.next:focus {
 }
 
 .facebook-link{
-  background-image:url("../img/facebook.png");
+  background-image:url("../img/sprites.png") -5px -5px;
 }
 .instagram-link{
-  background-image:url("../img/instagram.png");
+  background-image:url("../img/sprites.png") -54px -5px;
 }
 .twitter-link{
-  background-image:url("../img/twitter.png");
+  background-image:url("../img/sprites.png") -103px -6px;
   }
 .error{
   display:none;
