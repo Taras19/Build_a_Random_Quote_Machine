@@ -104,7 +104,7 @@ cite{
   width:20%;
   box-shadow:0 0 20px 0 rgba(74, 185, 242, 0.4);
 }
-button.next{
+.next{
   border: none;
   background-color: transparent;
   padding: 0 24px;
@@ -160,12 +160,14 @@ button.next{
 .next:hover {
   color: #fff;
 }
+/*
 button.next:active {
   background-color:transparent;
 }
 button.next:focus {
   background-color:transparent;
 }
+*/
 .next:hover:before {
   width: 100%;
   background: #4AB9F2;
