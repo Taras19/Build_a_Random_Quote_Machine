@@ -109,7 +109,12 @@ document.addEventListener("DOMContentLoaded", function(){
     listFilter[index].show = true;
     getInfoCurrentPosition(select.value);
   });
-
+  
+  if ('ontouchstart' in window) {
+    /* browser with Touch Events support */
+    next.classList.add("next-touch");
+  }
+  
   function getRandomInt(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
