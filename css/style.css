@@ -117,6 +117,14 @@ button.next{
   outline:none;
   white-space:nowrap;
 }
+.next-touch{
+  background-color:#4AB9F2;
+  border-radius:5px;
+}
+.next.next-touch:before,
+.next.next-touch:after{
+  display:none;
+}
 .next:before {
   content: '';
   position: absolute;
