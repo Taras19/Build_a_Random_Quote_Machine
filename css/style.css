@@ -179,13 +179,13 @@ button.next:focus {
 }
 
 .facebook-link{
-  background-image:url("../img/sprites.png") -5px -5px;
+  background:url("../img/sprites.png") -5px -5px;
 }
 .instagram-link{
-  background-image:url("../img/sprites.png") -54px -5px;
+  background:url("../img/sprites.png") -54px -5px;
 }
 .twitter-link{
-  background-image:url("../img/sprites.png") -103px -6px;
+  background:url("../img/sprites.png") -103px -6px;
   }
 .error{
   display:none;
