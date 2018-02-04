@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function(){
           var heightTitleTextNew =coorTitleTextNew.bottom - coorTitleTextNew.top;
           /* ширина title */
           var widthTitleTextNew = coorTitleTextNew.right - coorTitleTextNew.left;
-          titleTextNew.style.top = (coorTagWithTitle.top - (heightTitleTextNew + 5)) + "px";
+          titleTextNew.style.top = ((coorTagWithTitle.top + scrollTop) - (heightTitleTextNew + 5)) + "px";
           titleTextNew.style.left =(coorTagWithTitle.left + (widthTagWithTitle / 2)) - widthTitleTextNew/2 + "px";
         }
       });
