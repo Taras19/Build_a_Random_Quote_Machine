@@ -380,6 +380,26 @@ button.next:focus {
 .no-csspointerevents .nice-select.open .list {
   display: block; }
 
+.title-text{
+  position:absolute;
+  top:0;
+  left:0;
+  padding:0 5px;
+  border:1px solid rgba(233, 30, 99, 0.7);
+  border-radius:10px;
+  background-color:white;
+  white-space:nowrap;
+}
+.title-text::before{
+  content:"";
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%);
+  border:5px solid transparent;
+  border-top-color:rgba(233, 30, 99, 0.7);
+}
+
 @media (min-width:1200px){
   .parent-container{
     width:1140px;
