@@ -37,6 +37,15 @@ document.addEventListener("DOMContentLoaded", function(){
     var niceSelect = document.querySelector(".nice-select");
     niceSelect.setAttribute('data-title', select.getAttribute('data-title'));
     popupTooltip();
+    /* подія для закривання підсказки при click*/
+    niceSelect.addEventListener("click",function(){
+      var titleText = document.querySelector(".title-text");
+      if((event.target.classList.contains("tag-with-title") 
+        || event.target.classList.contains("current")) 
+        && titleText){
+        body.removeChild(titleText);
+      }
+    });
     var niceSelectList = document.querySelectorAll(".list li");
     for(var i = 0; i < niceSelectList.length; i++){
       niceSelectList[i].addEventListener("click",function(){
@@ -80,6 +89,15 @@ document.addEventListener("DOMContentLoaded", function(){
       var niceSelect = document.querySelector(".nice-select");
       niceSelect.setAttribute('data-title', select.getAttribute('data-title'));
       popupTooltip();
+      /* подія для закривання підсказки при click*/
+      niceSelect.addEventListener("click",function(){
+        var titleText = document.querySelector(".title-text");
+        if((event.target.classList.contains("tag-with-title") 
+          || event.target.classList.contains("current")) 
+          && titleText){
+          body.removeChild(titleText);
+        }
+      });
       var continueBrowsing = document.querySelector(".continueBrowsing");
       continueBrowsing.addEventListener("click",function(){
         body.classList.remove("showError-js");
@@ -170,6 +188,8 @@ document.addEventListener("DOMContentLoaded", function(){
           && !this.classList.contains("open")){
           /* координати тегу для title */
           var coorTagWithTitle = this.getBoundingClientRect();
+          /**/
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
           /* ширина тегу з підсказкою*/
           var widthTagWithTitle = coorTagWithTitle.right - coorTagWithTitle.left;
           var titleTextNew = titleText.cloneNode(true);
