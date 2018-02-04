@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
+  var body = document.querySelector("body");
   var photoAuthor = document.querySelector(".photo-author");
   var blockquote = document.querySelector("blockquote");
   var cite = document.querySelector("cite");
@@ -34,7 +35,8 @@ document.addEventListener("DOMContentLoaded", function(){
     $('select').niceSelect();
     /* так як select не доступний вішаю подію на niceSelect */
     var niceSelect = document.querySelector(".nice-select");
-    niceSelect.title = select.title;
+    niceSelect.setAttribute('data-title', select.getAttribute('data-title'));
+    popupTooltip();
     var niceSelectList = document.querySelectorAll(".list li");
     for(var i = 0; i < niceSelectList.length; i++){
       niceSelectList[i].addEventListener("click",function(){
@@ -76,7 +78,8 @@ document.addEventListener("DOMContentLoaded", function(){
       currentPosition.innerHTML = "1";
       $('select').niceSelect();
       var niceSelect = document.querySelector(".nice-select");
-      niceSelect.title = select.title;
+      niceSelect.setAttribute('data-title', select.getAttribute('data-title'));
+      popupTooltip();
       var continueBrowsing = document.querySelector(".continueBrowsing");
       continueBrowsing.addEventListener("click",function(){
         body.classList.remove("showError-js");
@@ -151,6 +154,47 @@ document.addEventListener("DOMContentLoaded", function(){
        });
        currentPosition.innerHTML = numberShown.length;
 
+    }
+  }
+  /* вспливаюча підсказка*/
+   
+  function popupTooltip(){
+    var listTagsWithTitle = document.querySelectorAll(".tag-with-title");
+    console.log(listTagsWithTitle);
+    var titleText = document.createElement("div");
+    titleText.className = "title-text";
+    for(var i = 0; i < listTagsWithTitle.length; i++){
+      listTagsWithTitle[i].addEventListener("mouseover",function(event){
+        if((event.target.classList.contains("tag-with-title") 
+          || event.target.classList.contains("current")) 
+          && !this.classList.contains("open")){
+          /* координати тегу для title */
+          var coorTagWithTitle = this.getBoundingClientRect();
+          /* ширина тегу з підсказкою*/
+          var widthTagWithTitle = coorTagWithTitle.right - coorTagWithTitle.left;
+          var titleTextNew = titleText.cloneNode(true);
+          titleTextNew.innerHTML = this.getAttribute('data-title');
+          body.appendChild(titleTextNew);
+          var coorTitleTextNew = titleTextNew.getBoundingClientRect();
+          /* висота title */
+          var heightTitleTextNew =coorTitleTextNew.bottom - coorTitleTextNew.top;
+          /* ширина title */
+          var widthTitleTextNew = coorTitleTextNew.right - coorTitleTextNew.left;
+          titleTextNew.style.top = (coorTagWithTitle.top - (heightTitleTextNew + 5)) + "px";
+          titleTextNew.style.left =(coorTagWithTitle.left + (widthTagWithTitle / 2)) - widthTitleTextNew/2 + "px";
+        }
+      });
+      
+      listTagsWithTitle[i].addEventListener("mouseout",function(){
+        var titleText = document.querySelector(".title-text");
+        if((event.target.classList.contains("tag-with-title") 
+          || event.target.classList.contains("current")) 
+          && titleText){
+          //var titleText = document.querySelector(".title-text");
+          body.removeChild(titleText);
+        }
+      });
+      
     }
   }
  
