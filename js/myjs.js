@@ -177,44 +177,46 @@ document.addEventListener("DOMContentLoaded", function(){
   /* вспливаюча підсказка*/
    
   function popupTooltip(){
-    var listTagsWithTitle = document.querySelectorAll(".tag-with-title");
-    console.log(listTagsWithTitle);
-    var titleText = document.createElement("div");
-    titleText.className = "title-text";
-    for(var i = 0; i < listTagsWithTitle.length; i++){
-      listTagsWithTitle[i].addEventListener("mouseover",function(event){
-        if((event.target.classList.contains("tag-with-title") 
-          || event.target.classList.contains("current")) 
-          && !this.classList.contains("open")){
-          /* координати тегу для title */
-          var coorTagWithTitle = this.getBoundingClientRect();
-          /**/
-          var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-          /* ширина тегу з підсказкою*/
-          var widthTagWithTitle = coorTagWithTitle.right - coorTagWithTitle.left;
-          var titleTextNew = titleText.cloneNode(true);
-          titleTextNew.innerHTML = this.getAttribute('data-title');
-          body.appendChild(titleTextNew);
-          var coorTitleTextNew = titleTextNew.getBoundingClientRect();
-          /* висота title */
-          var heightTitleTextNew =coorTitleTextNew.bottom - coorTitleTextNew.top;
-          /* ширина title */
-          var widthTitleTextNew = coorTitleTextNew.right - coorTitleTextNew.left;
-          titleTextNew.style.top = ((coorTagWithTitle.top + scrollTop) - (heightTitleTextNew + 5)) + "px";
-          titleTextNew.style.left =(coorTagWithTitle.left + (widthTagWithTitle / 2)) - widthTitleTextNew/2 + "px";
-        }
-      });
-      
-      listTagsWithTitle[i].addEventListener("mouseout",function(){
-        var titleText = document.querySelector(".title-text");
-        if((event.target.classList.contains("tag-with-title") 
-          || event.target.classList.contains("current")) 
-          && titleText){
-          //var titleText = document.querySelector(".title-text");
-          body.removeChild(titleText);
-        }
-      });
-      
+    if(!('ontouchstart' in window)){
+      var listTagsWithTitle = document.querySelectorAll(".tag-with-title");
+      console.log(listTagsWithTitle);
+      var titleText = document.createElement("div");
+      titleText.className = "title-text";
+      for(var i = 0; i < listTagsWithTitle.length; i++){
+        listTagsWithTitle[i].addEventListener("mouseover",function(event){
+          if((event.target.classList.contains("tag-with-title") 
+            || event.target.classList.contains("current")) 
+            && !this.classList.contains("open")){
+            /* координати тегу для title */
+            var coorTagWithTitle = this.getBoundingClientRect();
+            /**/
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            /* ширина тегу з підсказкою*/
+            var widthTagWithTitle = coorTagWithTitle.right - coorTagWithTitle.left;
+            var titleTextNew = titleText.cloneNode(true);
+            titleTextNew.innerHTML = this.getAttribute('data-title');
+            body.appendChild(titleTextNew);
+            var coorTitleTextNew = titleTextNew.getBoundingClientRect();
+            /* висота title */
+            var heightTitleTextNew =coorTitleTextNew.bottom - coorTitleTextNew.top;
+            /* ширина title */
+            var widthTitleTextNew = coorTitleTextNew.right - coorTitleTextNew.left;
+            titleTextNew.style.top = ((coorTagWithTitle.top + scrollTop) - (heightTitleTextNew + 5)) + "px";
+            titleTextNew.style.left =(coorTagWithTitle.left + (widthTagWithTitle / 2)) - widthTitleTextNew/2 + "px";
+          }
+        });
+        
+        listTagsWithTitle[i].addEventListener("mouseout",function(){
+          var titleText = document.querySelector(".title-text");
+          if((event.target.classList.contains("tag-with-title") 
+            || event.target.classList.contains("current")) 
+            && titleText){
+            //var titleText = document.querySelector(".title-text");
+            body.removeChild(titleText);
+          }
+        });
+        
+      }
     }
   }
  
