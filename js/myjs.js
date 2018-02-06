@@ -179,7 +179,6 @@ document.addEventListener("DOMContentLoaded", function(){
   function popupTooltip(){
     if(!('ontouchstart' in window)){
       var listTagsWithTitle = document.querySelectorAll(".tag-with-title");
-      console.log(listTagsWithTitle);
       var titleText = document.createElement("div");
       titleText.className = "title-text";
       for(var i = 0; i < listTagsWithTitle.length; i++){
@@ -211,7 +210,6 @@ document.addEventListener("DOMContentLoaded", function(){
           if((event.target.classList.contains("tag-with-title") 
             || event.target.classList.contains("current")) 
             && titleText){
-            //var titleText = document.querySelector(".title-text");
             body.removeChild(titleText);
           }
         });
