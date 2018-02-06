@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function(){
           }
         });
         
-        listTagsWithTitle[i].addEventListener("mouseout",function(){
+        listTagsWithTitle[i].addEventListener("mouseout",function(event){
           var titleText = document.querySelector(".title-text");
           if((event.target.classList.contains("tag-with-title") 
             || event.target.classList.contains("current")) 
