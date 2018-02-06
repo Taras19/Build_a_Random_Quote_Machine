@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
     niceSelect.setAttribute('data-title', select.getAttribute('data-title'));
     popupTooltip();
     /* подія для закривання підсказки при click*/
-    niceSelect.addEventListener("click",function(){
+    niceSelect.addEventListener("click",function(event){
       var titleText = document.querySelector(".title-text");
       if((event.target.classList.contains("tag-with-title") 
         || event.target.classList.contains("current")) 
